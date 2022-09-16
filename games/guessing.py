@@ -10,7 +10,14 @@ answer_int = int(answer_str)
 
 print("You typed: ", answer_str)
 
-if answer_int == secret_number:
+got_it_right = answer_int == secret_number
+higher = answer_int > secret_number
+lowest = answer_int < secret_number
+
+if got_it_right:
     print("You're right")
 else:
-    print("You're wrong! :/ The right answer was ", secret_number)
+    if higher:
+        print("You're wrong! :/ Your attempt was higher than the number ")
+    elif lowest:
+        print("You're wrong! :/ Your attempt was lower than the number ")
