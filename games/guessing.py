@@ -17,7 +17,7 @@ while round_is <= total_attempts:
     higher = answer_int > secret_number
     lowest = answer_int < secret_number
 
-    print("Attempt ", round_is, "of ", total_attempts)
+    print("Attempt {} of {}".format(round_is, total_attempts))
     if got_it_right:
         print("You're right")
     else:
