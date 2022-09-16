@@ -20,6 +20,7 @@ while round_is <= total_attempts:
     print("Attempt {} of {}".format(round_is, total_attempts))
     if got_it_right:
         print("You're right")
+        round_is = total_attempts
     else:
         if higher:
             print("You're wrong! :/ Your attempt was higher than the number ")
