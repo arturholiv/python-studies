@@ -4,10 +4,9 @@ print("*****************************")
 
 secret_number = 33
 total_attempts = 3
-round_is = 1
 
 
-while round_is <= total_attempts:
+for round_is in range(1, total_attempts + 1):
     answer_str = input("Type your number: ")
 
     answer_int = int(answer_str)
@@ -26,4 +25,3 @@ while round_is <= total_attempts:
             print("You're wrong! :/ Your attempt was higher than the number ")
         elif lowest:
             print("You're wrong! :/ Your attempt was lower than the number ")
-    round_is = round_is + 1
