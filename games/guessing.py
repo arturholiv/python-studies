@@ -1,8 +1,10 @@
+import random
+
 print("*****************************")
 print("Welcome to the guessing game!")
 print("*****************************")
 
-secret_number = 33
+secret_number = int(random.randrange(1, 15))
 total_attempts = 3
 
 
@@ -30,4 +32,6 @@ for round_is in range(1, total_attempts + 1):
             print("You're wrong! :/ Your attempt was higher than the number ")
         elif lowest:
             print("You're wrong! :/ Your attempt was lower than the number ")
-print("game over")
+            if answer_int == 3:
+                print("The right answer was {}".format(secret_number))
+print("Game fished")
