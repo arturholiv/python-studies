@@ -6,7 +6,7 @@ print("*****************************")
 
 secret_number = int(random.randrange(1, 100))
 total_attempts = 0
-points = 100
+points = 1000
 print("Enter the difficulty level")
 print("(1) easy - (2) medium - (3) hard")
 
@@ -41,9 +41,9 @@ for round_is in range(1, total_attempts + 1):
         break
     else:
         if higher:
-            print("You're wrong! :/ Your attempt was higher than the number ")
+            print("You're wrong! Your attempt was higher than the number ")
         elif lowest:
-            print("You're wrong! :/ Your attempt was lower than the number ")
+            print("You're wrong! Your attempt was lower than the number ")
         points_lost = abs(secret_number - answer_int)
         points = points - points_lost
 print("Game fished! Total points: {}, the correct answer was {}".format(points, secret_number))
