@@ -50,3 +50,6 @@ def play_guessing():
             points = points - points_lost
     print("Game fished! Total points: {}, the correct answer was {}".format(points, secret_number))
 
+
+if __name__ == "__main__":
+    play_guessing()

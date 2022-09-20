@@ -4,3 +4,7 @@ def play_hangman():
     print("*****************************")
 
     print("Game fished!")
+
+
+if __name__ == "__main__":
+    play_hangman()
