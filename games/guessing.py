@@ -20,7 +20,8 @@ elif level == 3:
     total_attempts = 3
 
 for round_is in range(1, total_attempts + 1):
-    answer_str = input("Type a number between 1 and 15: ")
+    print("You have {} attempts to found the number".format(total_attempts))
+    answer_str = input("Type a number between 1 and 100: ")
 
     answer_int = int(answer_str)
     print("You typed: ", answer_str)
@@ -45,4 +46,4 @@ for round_is in range(1, total_attempts + 1):
             print("You're wrong! :/ Your attempt was lower than the number ")
         points_lost = abs(secret_number - answer_int)
         points = points - points_lost
-print("Game fished! Total points: {}".format(points))
+print("Game fished! Total points: {}, the correct answer was {}".format(points, secret_number))
