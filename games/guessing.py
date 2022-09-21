@@ -1,7 +1,7 @@
 import random
 
 
-def play_guessing():
+def play():
     print("*****************************")
     print("Welcome to the guessing game!")
     print("*****************************")
@@ -46,10 +46,10 @@ def play_guessing():
                 print("You're wrong! Your attempt was higher than the number ")
             elif lowest:
                 print("You're wrong! Your attempt was lower than the number ")
-            points_lost = abs(secret_number - answer_int)
-            points = points - points_lost
+        points_lost = abs(secret_number - answer_int)
+        points = points - points_lost
     print("Game fished! Total points: {}, the correct answer was {}".format(points, secret_number))
 
 
 if __name__ == "__main__":
-    play_guessing()
+    play()

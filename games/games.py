@@ -2,20 +2,20 @@ import guessing
 import hangmann
 
 
-def jogar():
+def play():
     print("Choose your game:")
     print("(1) hangman - (2) guessing")
 
     game = int(input("Choose your game:"))
 
     if game == 1:
-        hangmann.play_hangman()
+        hangmann.play()
     elif game == 2:
-        guessing.play_guessing()
+        guessing.play()
 
 
 if __name__ == "__main__":
-    jogar()
+    play()
 
 
     
