@@ -8,6 +8,8 @@ def play():
     enforcou = False
     acertou = False
 
+    erros = 0
+
     acertos = ["_", "_", "_", "_", "_"]
     print(acertos)
 
@@ -20,7 +22,11 @@ def play():
             if chute.lower() == letra.lower():
                 acertos[index] = letra
                 print("Letra {} correta na posição {}".format(letra, index + 1))
-            index = index + 1
+            index += 1
+        else:
+            erros += 1
+
+        enforcou = erros == len(palavra_secreta)
         print(acertos)
 
 
