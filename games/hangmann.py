@@ -31,7 +31,10 @@ def play():
         acertou = "_" not in acertos
         print(acertos)
 
-
+    if acertou:
+        print("Você ganhou")
+    elif enforcou:
+        print("Você perdeu")
     print("Fim do jogo!")
 
 
