@@ -6,14 +6,11 @@ def play():
     print("*Bem vindo ao jogo da Forca!*")
     print("*****************************")
 
-    arquivo_palavras = open("words.txt", "r")
     palavras = []
-
-    for palavra in arquivo_palavras:
-        palavra = palavra.strip()
-        palavras.append(palavra)
-
-    arquivo_palavras.close()
+    with open("words.txt", "r") as arquivo_palavras:
+        for palavra in arquivo_palavras:
+            palavra = palavra.strip()
+            palavras.append(palavra)
 
     rand_num = random.randrange(0, len(palavras) + 1)
 
