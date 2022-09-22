@@ -3,20 +3,26 @@ def play():
     print("*Bem vindo ao jogo da Forca!*")
     print("*****************************")
 
-    palavra_sercreta = "carro"
+    palavra_secreta = "carro"
 
     enforcou = False
     acertou = False
 
-    while not enforcou and not acertou:
-        chute = input("Digite uma letra:  ").lower()
+    acertos = ["_", "_", "_", "_", "_"]
+    print(acertos)
 
-        index = 1
-        for letra in palavra_sercreta:
-            if chute == letra:
-                print("Letra {} correta na posição {}".format(letra, index))
+    while not enforcou and not acertou:
+        chute = input("Digite uma letra:  {}  ".format(acertos))
+        chute = chute.strip()
+
+        index = 0
+        for letra in palavra_secreta:
+            if chute.lower() == letra.lower():
+                acertos[index] = letra
+                print("Letra {} correta na posição {}".format(letra, index + 1))
             index = index + 1
-        # print("jogando...")
+        print(acertos)
+
 
     print("Fim do jogo!")
 
