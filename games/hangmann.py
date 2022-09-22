@@ -10,26 +10,27 @@ def play():
 
     erros = 0
 
-    acertos = ["_", "_", "_", "_", "_"]
-    print(acertos)
+    lista_acertos = ["_" for letra in palavra_secreta]
+
+    print(lista_acertos)
 
     while not enforcou and not acertou:
-        chute = input("Digite uma letra:  {}  ".format(acertos)).strip().upper()
+        chute = input("Digite uma letra:  {}  ".format(lista_acertos)).strip().upper()
         chute = chute.strip()
 
         if chute in palavra_secreta:
             index = 0
             for letra in palavra_secreta:
                 if chute == letra:
-                    acertos[index] = letra
+                    lista_acertos[index] = letra
                     print("Letra {} correta na posição {}".format(letra, index + 1))
                 index += 1
         else:
             erros += 1
 
         enforcou = erros == len(palavra_secreta)
-        acertou = "_" not in acertos
-        print(acertos)
+        acertou = "_" not in lista_acertos
+        print(lista_acertos)
 
     if acertou:
         print("Você ganhou")
