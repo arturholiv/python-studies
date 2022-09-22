@@ -2,19 +2,9 @@ import random
 
 
 def play():
-    print("*****************************")
-    print("*Bem vindo ao jogo da Forca!*")
-    print("*****************************")
+    print_apresentacao()
 
-    palavras = []
-    with open("words.txt", "r") as arquivo_palavras:
-        for palavra in arquivo_palavras:
-            palavra = palavra.strip()
-            palavras.append(palavra)
-
-    rand_num = random.randrange(0, len(palavras) + 1)
-
-    palavra_secreta = palavras[rand_num].upper()
+    palavra_secreta = set_palavra_secreta()
 
     enforcou = False
     acertou = False
@@ -52,6 +42,23 @@ def play():
     print("Fim do jogo!")
 
 
+def print_apresentacao():
+    print("*****************************")
+    print("*Bem vindo ao jogo da Forca!*")
+    print("*****************************")
+
+
+def set_palavra_secreta():
+    palavras = []
+    with open("words.txt", "r") as arquivo_palavras:
+        for palavra in arquivo_palavras:
+            palavra = palavra.strip()
+            palavras.append(palavra)
+
+    rand_num = random.randrange(0, len(palavras) + 1)
+
+    palavra_secreta = palavras[rand_num].upper()
+    return  palavra_secreta
 
 if __name__ == "__main__":
     play()
