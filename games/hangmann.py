@@ -23,7 +23,7 @@ def play():
     acertou = False
 
     erros = 0
-
+    tentativas_restantes = 0
     lista_acertos = ["_" for letra in palavra_secreta]
 
     print(lista_acertos)
@@ -41,6 +41,8 @@ def play():
                 index += 1
         else:
             erros += 1
+            tentativas_restantes = len(palavra_secreta) - erros
+            print("Você tem {} tentativas restantes".format(tentativas_restantes))
 
         enforcou = erros == len(palavra_secreta)
         acertou = "_" not in lista_acertos
