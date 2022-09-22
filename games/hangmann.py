@@ -1,9 +1,23 @@
+import random
+
+
 def play():
     print("*****************************")
     print("*Bem vindo ao jogo da Forca!*")
     print("*****************************")
 
-    palavra_secreta = "carro".upper()
+    arquivo_palavras = open("words.txt", "r")
+    palavras = []
+
+    for palavra in arquivo_palavras:
+        palavra = palavra.strip()
+        palavras.append(palavra)
+
+    arquivo_palavras.close()
+
+    rand_num = random.randrange(0, len(palavras) + 1)
+
+    palavra_secreta = palavras[rand_num].upper()
 
     enforcou = False
     acertou = False
