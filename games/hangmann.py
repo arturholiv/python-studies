@@ -28,17 +28,18 @@ def play():
                 index += 1
         else:
             erros += 1
-            tentativas_restantes = len(palavra_secreta) - erros
-            print("Você tem {} tentativas restantes".format(tentativas_restantes))
+            # tentativas_restantes = erros - erros
+            desenha_forca(erros)
+            # print("Você tem {} tentativas restantes".format(tentativas_restantes))
 
-        enforcou = erros == len(palavra_secreta)
+        enforcou = erros == 7
         acertou = "_" not in lista_acertos
         print(lista_acertos)
 
     if acertou:
-        print("Você ganhou")
+        imprime_mensagem_ganhou();
     elif enforcou:
-        print("Você perdeu")
+        imprime_mensagem_enforcou(palavra_secreta)
     print("Fim do jogo!")
 
 
@@ -55,10 +56,93 @@ def set_palavra_secreta():
             palavra = palavra.strip()
             palavras.append(palavra)
 
-    rand_num = random.randrange(0, len(palavras) + 1)
+    rand_num = random.randrange(0, len(palavras))
 
     palavra_secreta = palavras[rand_num].upper()
     return  palavra_secreta
+
+def desenha_forca(erros):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if(erros == 1):
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 2):
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 3):
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 4):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if(erros == 5):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if(erros == 6):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if (erros == 7):
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
+
+def imprime_mensagem_enforcou(palavra_secreta):
+    print("Você foi enforcado!")
+    print("A palavra era {}".format(palavra_secreta))
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
+
+def imprime_mensagem_ganhou():
+    print("Parabéns, você ganhou!")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
 
 if __name__ == "__main__":
     play()
